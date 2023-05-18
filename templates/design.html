@@ -1,0 +1,55 @@
+{%  load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Buildwith.me</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'des.css' %}">
+        <script type="text/javascript" src="{% static 'main.js' %}"></script>
+    </head>
+    <body onload="vn(), modlBox()" >
+        <section class="section">
+            <div class="p-holder">
+                <div class=col>
+                    <img class="card" src="{% static 'pictures/culture2.png' %}">
+                    <img class="card" src="{% static 'pictures/bubble_b.png' %}">
+                    <img class="card" src="{% static 'pictures/wndr2logo.png' %}">
+                    <img class="card" src="{% static 'pictures/bg2.png' %}">
+                </div>
+                <div class=col>
+                    <img class="card" src="{% static 'pictures/bubble_b.png' %}">
+                    <img class="card" src="{% static 'pictures/wndr2logo.png' %}">
+                    <img class="card" src="{% static 'pictures/bg2.png' %}">
+                    <img class="card" src="{% static 'pictures/culture2.png' %}">
+                </div>    
+                <div class=col>
+                    <img class="card" src="{% static 'pictures/b4.png' %}">
+                    <img class="card" src="{% static 'pictures/void_logoArtboard 1.png' %}">
+                    
+                    <img class="card" src="{% static 'pictures/culture2.png' %}">
+                    <img class="card" src="{% static 'pictures/bg2.png' %}">
+                </div>
+                <div class=col>
+                    <img class="card" src="{% static 'pictures/bubble_b.png' %}">
+                    <img class="card" src="{% static 'pictures/wndr2logo.png' %}">
+                    <img class="card" src="{% static 'pictures/bg2.png' %}">
+                    <img class="card" src="{% static 'pictures/culture2.png' %}">
+                </div>
+                
+            </div>
+
+            <div id="modl" class="hide">
+                <div>
+                    <img id="modlimg" >
+                </div>
+               
+                <button style="color: red" onclick="doThis()">&Cross;</button>
+            </div>
+            
+        </section>
+        
+        
+    </body>
+</html>

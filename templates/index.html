@@ -1,0 +1,238 @@
+{%  load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Buildwith.me</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <script defer type="text/javascript" src="{% static 'main.js' %}"></script>
+    </head>
+    <body onload="type_it(), get_time(), vn()" onscroll="y()">
+        <div class="logo-holder">
+            <div class="logo">
+                <img src="{% static 'pictures/005-right-arrow-w.png' %}">
+                <h1>Buildwith.me</h1> 
+                <img src="{% static 'pictures/005-right-arrow-w.png' %}">
+            </div>
+        </div>
+
+        <nav>
+            <header>
+                <a href="#"><img src="{% static 'pictures/001-twitter-w.png' %}"></a>  
+                <a href="#"><img src="{% static 'pictures/002-linkedin-w.png' %}"></a>
+                <a href="#"><img src="{% static 'pictures/003-github-w.png' %}"></a>   
+                <a href="#"><img src="{% static 'pictures/004-mail-w.png' %}"></a> 
+            </header>
+        </nav>
+
+        <div class="time">
+            <div class="t-holder">
+                 <a href="#" title="Home" ></a>
+                <a href="#bio" title="Bio"></a>
+                 <a href="#skills2" title="Skills"></a>
+                  <a href="#hire" title="Hire"></a>
+                <a href="#project" title="Project"></a>
+            </div>
+        </div>
+
+        <section id="intro">
+            <div class="intro">
+                <p id="time"></p>
+                <h1 id="name"></h1>
+                <p class="title" id="w"> </p>
+                <div class="t">
+                    <div class="t-content">
+                        <p class="title">Full Stack Web Developer</p>
+                        <p class="title">Graphic Designer</p>
+                    </div>
+                </div>
+                <div class="btn">
+                    <a href="#hire"><button class="button"><p>Meet</p><img src="{% static 'pictures/007-meeting-w.png' %}"></button></a>
+                    <a href="#bio" id="biobtn"><button class="button"><p>Bio</p><img src="{% static 'pictures/008-user-w.png' %}"></button></a>
+                </div>
+            </div>
+        </section>
+
+        <section id="bio" class="section">
+            
+            <div class="quote">
+                <img src="{% static 'pictures/006-quote-w.png' %}">
+                {% for q in quote %}
+                <p class="p">{{ q }}</p>
+                {% endfor %}
+                <img src="{% static 'pictures/006-quote-w.png' %}">
+            </div>
+            <div class="btn2">
+                
+                <a href="#skills2" id="skbtn"><button><p>Skills</p></button></a>
+                <a href="#project" id="probtn"><button><p>Projects</p></button></a>
+                <a href="#experience" download="Ifeanyi_ghsili_resume"><button><p>Resume</p></button></a>
+                <a href="/designs" id="debtn"><button><p>Designs</p></button></a>
+                <!-- <a href="#experience"><button><p>Cover leter</p></button></a> -->
+            </div>
+            <div>
+                <!-- <img class="myimg" src="{% static 'pictures/IMG_20200406_120558_3_2 (2).jpg' %}"> -->
+            </div>
+            
+            
+        </section> 
+
+        <section id="skills2" class="section">
+            <div class="skills2">
+                <a class="more" href="/skills"><p>see more</p> <img src="{% static 'pictures/005-right-arrow-w.png'%}"></a>
+                <h1>Skills</h1>
+                <div class="card2" data-id="3">
+                    <div class="n"><p>Frontend</p></div>
+                    <div class="s">
+                        <div data-id="1"></div>
+                        <div data-id="2"></div>
+                        <div data-id="3"></div>
+                        <div data-id="4"></div>
+                    </div>
+                </div>
+                <div class="card2" data-id="2">
+                    <div class="n">Backend</div>
+                    <div class="s">
+                        <div data-id="1"></div>
+                        <div data-id="2"></div>
+                        <div data-id="3"></div>
+                        <div data-id="4"></div>
+                    </div>
+                </div>
+                <div class="card2" data-id="1">
+                    <div class="n">Framework</div>
+                    <div class="s">
+                        <div data-id="1"></div>
+                        <div data-id="2"></div>
+                        <div data-id="3"></div>
+                        <div data-id="4"></div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="hire" class="section">
+            <div class="hire">
+                <div class="hire-holder">
+                    <h1>Need to build a 
+                        <div class="e">
+                            <div class="e-content">
+                                <p>webpage?</p>
+                                <p>working API?</p>
+                                <p>Backend?</p>
+                            </div>
+                        </div>
+                        <span>Buildwith.me</span> has you covered
+                    </h1>
+                    <div class="divbtn">
+                        <a href="#"><button>Hire me</button></a>
+                        <a href="#"><button>Setup meet</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="back">
+                <div class="di">
+                    <div id="blob"></div>
+                </div>
+            </div>
+            <div class="back">
+                <div class="di2">
+                    <div id="blob2"></div>
+                </div>
+            </div>
+            <div class="back">
+                <div class="di3">
+                    <div id="blob3"></div>
+                </div>
+            </div>
+        </section> 
+
+        <a class="more pro" href="/project"><p>see more</p> <img src="{% static 'pictures/005-right-arrow-w.png'%}"></a>
+        <section id="project" class="section">
+            
+            <div class="project-holder">
+                
+                <div class="project">
+                    
+                    <div class="pinfo">
+                        <div>
+                            <h1>Fanime.com</h1>
+                        </div>
+                        <div>
+                            <p>This is a website where anime fans can visit and learn more about an anime character</p>
+                            <p>This is a website where anime fans can visit and learn more about an anime character</p>
+                        </div>
+                    </div>
+                    <div class="pimg">
+                        <div class="p-img"></div>
+                        <div class="device"></div>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <div class="pinfo">
+                        <div>
+                            <h1>Fanime.com</h1>
+                        </div>
+                        <div>
+                            <p>This is a website where anime fans can visit and learn more about an anime character</p>
+                            <p>This is a website where anime fans can visit and learn more about an anime character</p>
+                        </div>
+                    </div>
+                    <div class="pimg">
+                        <div class="p-img"></div>
+                        <div class="device"></div>
+                    </div>
+                </div>
+
+                <div class="project">
+                    
+                    <div class="pinfo">
+                        <div>
+                            <h1>Fanime.com</h1>
+                        </div>
+                        <div>
+                            <p>This is a website where anime fans can visit and learn more about an anime character</p>
+                            <p>This is a website where anime fans can visit and learn more about an anime character</p>
+                        </div>
+                    </div>
+                    <div class="pimg">
+                        <div class="p-img"></div>
+                        <div class="device"></div>
+                    </div>
+                </div>
+    
+            </div>
+           
+        </section>
+
+        <!-- <section id="designs">
+            <div class="design-holder">
+                <div class="design" onclick="grow()">
+                    <div class="d"><h1>DESIGNS</h1></div>
+                    <div class="c-h" id="des">
+                        <div>
+                            <img src="{% static 'pictures/bubble_b.png' %}">
+                            <img src="{% static 'pictures/LBGOAB_new_l.png' %}">
+                            <img src="{% static 'pictures/void_logoArtboard 1.png' %}">
+                            <img src="{% static 'pictures/wndr2logo.png' %}">
+                            <img src="{% static 'pictures/culture2.png' %}">
+                            <img src="{% static 'pictures/b4.png' %}">
+                            <img src="{% static 'pictures/bg.png' %}">
+                        </div>
+                    </div>
+                    <div class="d" onclick="grow()"><h1>DESIGNS</h1></div>
+                    
+                </div>
+                
+            </div>
+            <div class=" er">
+                <a href="#" class="gs"><button>Hire me</button></a>
+            </div>
+        </section> -->
+
+    </body>
+</html>

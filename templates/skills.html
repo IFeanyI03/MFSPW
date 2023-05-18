@@ -1,0 +1,154 @@
+{%  load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Buildwith.me</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'skills.css' %}">
+        <script type="text/javascript" src="{% static 'main.js' %}"></script>
+    </head>
+    <body onload="vn()">
+        <section class="s">
+            <div class="p-holder">
+                <div class=row>
+                    <div class=col>
+                        <h1>Frontend</h1>
+                        <div class="card-holder section">
+                            <div class="cards">
+                                {% for s in skill1 %}
+                                <div class="card">
+                                    <div class="percent" style="--clr: #c92100; --num: 80;">
+                                        <div class="dot"></div>
+                                        <svg>
+                                            <circle cx="50%" cy="50%" r="65"></circle>
+                                            <circle cx="50%" cy="50%" r="65"></circle>
+                                            
+                                        </svg>
+                                        <div class="sl-info">
+                                            <h4>{{ s.name }}</h4>
+                                            {% if s.image %}
+                                            <img src="{{ s.image.url }}" width="40%"></img>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class=col>
+                        <h1>Backend</h1>
+                        <div class="card-holder section">
+                            <div class="cards">
+                                {% for s in skill2 %}
+                                <div class="card">
+                                    <div class="percent" style="--clr: #c92100; --num: 80;">
+                                        <div class="dot"></div>
+                                        <svg>
+                                            <circle cx="50%" cy="50%" r="65"></circle>
+                                            <circle cx="50%" cy="50%" r="65"></circle>
+                                            
+                                        </svg>
+                                        <div class="sl-info">
+                                            <h4>{{ s.name }}</h4>
+                                            {% if s.image %}
+                                            <img src="{{ s.image.url }}" width="40%"></img>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class=col>
+                        <h1>Framework</h1>
+                        <div class="card-holder section">
+                            <div class="cards">
+                                {% for s in skill3 %}
+                                <div class="card">
+                                    <div class="percent" style="--clr: #c92100; --num: 80;">
+                                        <div class="dot"></div>
+                                        <svg>
+                                            <circle cx="50%" cy="50%" r="65"></circle>
+                                            <circle cx="50%" cy="50%" r="65"></circle>
+                                            
+                                        </svg>
+                                        <div class="sl-info">
+                                            <h4>{{ s.name }}</h4>
+                                            {% if s.image %}
+                                            <img src="{{ s.image.url }}" width="40%"></img>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill section">
+                <!-- {% for s in skill1 %}
+                    <div class="card">
+                        <div class="percent" style="--clr: #c92100; --num: 80;">
+                            <div class="dot"></div>
+                            <svg>
+                                <circle cx="50%" cy="50%" r="65"></circle>
+                                <circle cx="50%" cy="50%" r="65"></circle>
+                            </svg>
+                            <div class="sl-info">
+                                <h3 >{{ s.name }}</h3>
+                                {% if s.image %}
+                                <img src="{{ s.image.url }}" width="40px"></img>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %} -->
+            </div>
+            <div class="skill section">
+                {% for s in skill2 %}
+                <div>
+                    
+                    <h3>{{ s.name }}</h3>
+                    <p>{{ s.level }}</p>
+                    <a href="{{ s.img_link }}">Link</a>
+                    
+                </div>
+                {% endfor %}
+            </div>
+            <div class="skill section">
+                {% for s in skill3 %}
+                <div>
+                    
+                    <h3>{{ s.name }}</h3>
+                    <p>{{ s.level }}</p>
+                    <a href="{{ s.img_link }}">Link</a>
+                    
+                </div>
+                {% endfor %}
+            </div>
+            <div class="skill section">
+                {% for s in skill4 %}
+                <div>
+                    
+                    <h3>{{ s.name }}</h3>
+                    <p>{{ s.level }}</p>
+                    <a href="{{ s.img_link }}">Link</a>
+                    
+                </div>
+                {% endfor %}
+            </div>
+
+        </section>
+        
+        
+        
+    </body>
+</html>

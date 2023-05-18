@@ -1,0 +1,336 @@
+:root {
+    --color: #ffffff;
+    --background-color: #000000;
+    --accent-color: #c92100;
+    --accent-color2: #facc22;
+    --glass: rgba(0, 0, 0, .3);
+    --gradient: linear-gradient(to right, #c92200, #facc22, #c92200);
+    --gradient2: linear-gradient(to right, #c92200, #facc22, #c92200, #000000);
+    --gradient3: linear-gradient(to bottom, #c92200, #facc22);
+    --r-gradient: radial-gradient( #facc22, #c92200 80%);
+    --box-shadow: 4px 8px 16px rgba(255, 255, 255, .1);
+}
+
+@keyframes des {
+    0% {
+        background-position: 0%;
+    }
+    50% {
+        background-position: 100%;
+    }
+    100% {
+        background-position: 0%;
+    }
+}
+
+
+.showing {
+    opacity: 1 !important; 
+    filter: blur(0px) !important;
+    transform: translateX(0%) !important;
+    transition: transform .5s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 1s ease, opacity 1s ease;
+}
+
+
+.section {
+    opacity: 0;
+    /* transition: transform .5s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 1s ease, opacity 1s ease; */
+    /* transition-delay: .25s; */
+    filter: blur(10px);
+    transform: translateX(-100%);
+}
+
+.col:nth-child(2) > .showing {
+    transition-delay: 100ms ;
+}
+
+.col:nth-child(3) > .showing {
+    transition-delay: 200ms ;
+}
+
+
+
+@font-face {
+    font-family: Mono;
+    src: url(./fonts/SpaceMono-Regular.ttf);
+}
+
+body {
+    background-color: var(--background-color);
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    position: relative;
+    color: var(--color);
+    font-family: Mono;
+}
+
+* {
+    margin: 0;
+    font-family: Mono;
+    scroll-behavior: smooth;
+    border: none;
+    text-decoration: none;
+    padding: 0;
+    transition: all 1s ease;
+}
+
+@media only screen and (max-width: 425px ) {
+
+    @media only screen and (min-width: 280px ) {
+
+        .card-holder {
+            scroll-snap-type: x mandatory;
+        }
+
+        .cards .card {
+            scroll-snap-align: center
+        }
+
+
+    }
+}
+     
+
+@media only screen and (max-width: 1023px ) {
+
+    @media only screen and (min-width: 426px ) {
+
+        @media screen and (max-height: 425px ){
+
+        }
+    }
+
+
+}
+
+@media only screen and (max-width: 2160px ) {
+
+    @media only screen and (min-width: 1024px ) {
+
+        ::-webkit-scrollbar {
+            background-color: var(--color);
+            height: 4px;
+            width: 4px;
+            transition: all 1s ease;
+            cursor: pointer
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background-color: var(--background-color);
+            border-radius: -10px;
+            
+        }
+        
+        ::-webkit-scrollbar-corner {
+            background-color: var(--color);
+        }
+        
+        ::-webkit-scrollbar-track-piece {
+            width: 10px;
+            /* background-color: var(--color); */
+        }
+    }
+}
+
+        .p-holder {
+            width: 95%;
+            height: 90svh;
+            margin: 10svh auto 0px auto;
+        }
+
+        .row {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: space-evenly;
+            background-color: var(--glass);
+            align-items: center;
+        }
+
+        .col {
+            gap: 20px;
+            height: 30%;
+            width: 90%;
+            display:flex;
+            align-items: center;
+            flex-direction: row;
+        }
+
+        .col > h1 {
+            writing-mode: vertical-lr;
+            transform: rotateZ(-180deg);
+            width: max-content;
+            font-size: 1.5em;
+            background-image: var(--gradient);
+            background-size: 300%;
+            animation: des 60s infinite;
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+        }
+
+        .card-holder {
+            overflow-x: scroll;
+            gap: 20px;
+            width: 100%;
+            height: 100%;
+        }
+
+
+        .cards{
+            gap: 20px;
+            width: max-content;
+            height: 100%;
+            display:flex;
+            align-items: center;
+            flex-direction: row;
+        }
+
+        .cards .card {
+            height: 80%;
+            aspect-ratio: 1;
+            /* background-color: #252525; */
+            /* box-shadow: var(--box-shadow); */
+            /* border-radius: 50%; */
+            /* border: 1px solid rgba(255, 255, 255, .2); */
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card .percent {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .card .percent svg{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform: rotate(270deg);
+        }
+
+        .card .percent svg circle {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            fill: transparent;
+            stroke-width: 7;
+            stroke-linecap: round;
+            stroke: var(--background-color)
+        }
+
+        .card .percent svg circle:nth-child(2) {
+            stroke: var(--clr);
+            stroke-dasharray: 410;
+            stroke-dashoffset: calc(410 - (410 * var(--num)) / 100);
+            animation: fadeIn 1s linear forwards;
+            opacity: 0;
+            animation-delay: 1s;
+        }
+
+        .sl-info {
+            position: absolute;
+            width: 80%;
+            aspect-ratio: 1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 30;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .sl-info > h1 {
+            color: wheat;
+        }
+
+        /* .dot {
+            position: absolute;
+            background: red;
+            inset: 5px;
+            z-index: 10;
+            transform: rotate(calc( 3.6deg * var(--num)));
+            animation: animteDot 2s linear forwards;
+        }
+        
+        .dot::before {
+            content: '';
+            position: absolute;
+            top: -2.5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--clr);
+            box-shadow: 0 0 10px  var(--clr),
+            0 0 30px  var(--clr);
+        }
+
+        @keyframes animteDot {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(calc( 3.6deg * var(--num)));
+            }
+        } */
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .card:hover {
+            background-color: var(--color);
+            border-radius: 10%;
+        }
+
+
+        .skill {
+            position: relative;
+            display: flex;
+            width: 90%;
+            margin: auto;
+            height: max-content;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: flex-start;
+            align-items: center;
+            margin: 10px auto;
+        }
+
+        .skill > div {
+            width: 12.5%;
+            aspect-ratio: 1;
+            display: flex; 
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            background-color: #4f4f4f;
+        }
+
+        .skill > div:hover {
+            background-color: #fff;
+            color: #000000;
+            border-radius: 10%;
+            justify-content: flex-start;
+            gap: 30px;
+            transition: background-color 1s ease, border-radius 1s ease, display 1s ease;
+        }
